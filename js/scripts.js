@@ -1,40 +1,19 @@
 $(function(){
-
 	
 	var carouselList = $("#carousel ul");
-		larrow = $("#left");
-		rarrow = $("#right");
-
-		larrow.on("click", function(){
-			carouselList.animate({'marginLeft':-600}, function(){
-
-					$(this).find("li:last").after($(this).find("li:first"));
-					$(this).css({marginLeft:0});
-
-				});
-		});
-
-
-		rarrow.on("click", function(){
-			carouselList.animate({'marginRight':1200}, function(){
-
-					$(this).find("li:last").after($(this).find("li:first"));
-					$(this).css({marginRight:600});
-
-				});
-		});
-
-
-		carouselList.each(function(){
+	var slider = setInterval(function changeSlide(){
+	
+		carouselList.animate({'marginLeft':-600}, 1000, moveFirstSlide)}, 
+	3000);	
 		
-			setInterval(function(){
 
-				carouselList.animate({'marginLeft':-600}, 1000, function(){
+		function moveFirstSlide(){
 
-					$(this).find("li:last").after($(this).find("li:first"));
-					$(this).css({marginLeft:0});
-
-				});
-			}, 5000);
-		});
+			var firstItem = carouselList.find("li:first");
+			var lastItem = carouselList.find("li:last");
+				
+				lastItem.after(firstItem);
+				carouselList.css({marginLeft:0});
+			};
 });
+

@@ -11,7 +11,7 @@ body {
 	border: 1px solid black;
 	overflow: hidden;
 	display: inline-block;
-	float: left;
+	float:left;
 }
 
 .pictures {
@@ -25,17 +25,14 @@ body {
 .photo {
 	width: 600px;
 	height: 400px;
-	margin: 0;
-	padding: 0;
 	display: inline-block;
+	margin: 0;
 }
 
 .box1 {
 	background-image: url(https://static.pexels.com/photos/221074/pexels-photo-221074.jpeg);
 	background-position: center;
 	background-size: cover;
-	padding: 0;
-	margin: 0;
 }
 
 .box2 {
@@ -70,7 +67,7 @@ body {
 	margin: 0 auto;
 }
 
-.leftarrow:hover {
+.leftarrow:hover, .rightarrow:hover {
 	transform: scale(1.1, 1.1);
 	transition: .3s;
 }
@@ -84,11 +81,6 @@ body {
 	background-image: url(../images/right.png);
 	background-position: center;
 	background-repeat: no-repeat;
-}
-
-.rightarrow:hover {
-	transform: scale(1.1, 1.1);
-	transition: .3s;
 }
 
 .karuzela {
